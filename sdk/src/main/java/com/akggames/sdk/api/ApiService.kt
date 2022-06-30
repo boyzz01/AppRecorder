@@ -15,7 +15,7 @@ interface ApiService {
     ):ResponseBody
 
     @FormUrlEncoded
-    @POST("auth/users/send_otp")
+    @POST("auth/send_otp")
     fun sendOTP(
         @Field("email") email:String
     ):Call<ResponseBody>
