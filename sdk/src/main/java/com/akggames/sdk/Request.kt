@@ -12,11 +12,8 @@ import retrofit2.Response
 
 object Request {
 
-    private lateinit var context : Context
-    open fun init(context: Context){
-            this.context = context
-    }
-    open fun send_otp(email: String?) {
+
+    open fun send_otp(context: Context,email: String?) {
         var apiInterface: ApiService = ApiClient.getClient(context).create(ApiService::class.java)
 
         apiInterface.sendOTP("ardysyahputra01@gmail.com").enqueue(object : Callback<ResponseBody>{
@@ -29,5 +26,9 @@ object Request {
             }
 
         })
+    }
+
+    fun s(c: Context?, message: String?) {
+        Toast.makeText(c, message, Toast.LENGTH_SHORT).show()
     }
 }
