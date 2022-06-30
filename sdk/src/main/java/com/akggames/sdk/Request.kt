@@ -2,6 +2,7 @@ package com.akggames.sdk
 
 import ApiService
 import android.content.Context
+import android.util.Log
 import com.akggames.sdk.api.ApiClient
 import okhttp3.ResponseBody
 import retrofit2.Call
@@ -19,11 +20,11 @@ class Request {
 
         apiInterface.sendOTP("ardysyahputra01@gmail.com").enqueue(object : Callback<ResponseBody>{
             override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
-                
+                Log.d("AKGGAMESSDK","Response : "+response.body())
             }
 
             override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-
+                Log.d("AKGGAMESSDK","Response : "+t.message)
             }
 
         })
