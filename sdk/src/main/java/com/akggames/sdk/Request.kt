@@ -9,13 +9,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class Request {
+open class Request {
 
     private lateinit var context : Context
-    fun init(context: Context){
+    open fun init(context: Context){
             this.context = context
     }
-    fun send_otp(email: String?) {
+    open fun send_otp(email: String?) {
         var apiInterface: ApiService = ApiClient.getClient(context).create(ApiService::class.java)
 
         apiInterface.sendOTP("ardysyahputra01@gmail.com").enqueue(object : Callback<ResponseBody>{
