@@ -10,9 +10,9 @@ import java.util.concurrent.TimeUnit
 
 class ApiClient {
     companion object {
-        fun getClient(context: Context): Retrofit {
+        fun getClient(url : String): Retrofit {
 
-          val BASE_URL = "https://staging-auth.troves.gg/v1/api/"
+          val BASE_URL = url
           //  val BASE_URL = "https://ardisahputra.tech/epcs/"
 
 
